@@ -1,0 +1,52 @@
+.navbars-container {
+  position: absolute;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  transition: 500ms ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1000;
+  pointer-events: none;
+}
+.navbars-container * {
+  pointer-events: all;
+}
+.navbars-container .scroll-to-top {
+  opacity: 0;
+  pointer-events: none;
+  font-size: 2.6rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 300rem;
+  border: 2px solid var(--main);
+  background-color: var(--main);
+  color: var(--font-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 0rem;
+  left: 2rem;
+  cursor: pointer;
+  transition: 150ms;
+}
+.navbars-container.hide-top {
+  margin-top: calc(var(--top-navbar-height) * -1);
+}
+.navbars-container.expand-nav .scroll-to-top {
+  opacity: 0.5;
+  pointer-events: all;
+  bottom: 3rem;
+}
+.navbars-container.expand-nav .scroll-to-top:hover {
+  opacity: 1;
+  background-color: var(--font-light);
+  color: var(--main);
+  border-color: var(--font-light);
+  box-shadow: 0 0 0.8rem var(--main);
+  transform: scale(1.1);
+}/*# sourceMappingURL=navbar.css.map */

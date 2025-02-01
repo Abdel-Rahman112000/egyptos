@@ -1,0 +1,15 @@
+.Swiper_test {
+  height: 73vh;
+  margin-top: 100px;
+}
+
+@media (max-width: 767px) {
+  .Swiper_test {
+    height: 40vh;
+    margin-top: 200px;
+  }
+}
+.swiper-button-next,
+.swiper-button-prev {
+  color: #fff !important;
+}

@@ -1,0 +1,7 @@
+.bgHover {
+  opacity: 0.5;
+  transition: all 0.5s;
+}
+.imgCard:hover .bgHover {
+  opacity: 0;
+}
