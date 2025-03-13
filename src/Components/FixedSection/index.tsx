@@ -27,7 +27,7 @@ function FixedSection({ title }: { title?: string }) {
       }}
     >
       <Typography
-        variant="h1"
+        variant="h4"
         sx={{
           fontWeight: "700",
           color: "#fff",

@@ -41,7 +41,10 @@ function Layout() {
                     path="excursionsfromhurghada/:name"
                     element={<HurghadaCard />}
                   />
-                  <Route path="product/:name" element={<SliderHurhada />} />
+                  <Route
+                    path="excursionsfroomhurghada/:name"
+                    element={<SliderHurhada />}
+                  />
                 </>
               )}
               {(language === "ar" || language === "en") && (

@@ -48,9 +48,9 @@ function FristNavbar() {
   return (
     <AppBar
       sx={{
-        position: "fixed",
-        top: navbarPosition,
-        transition: "s all  ease  ",
+        // position: "fixed",
+        // top: 0,
+        // transition: "s all  ease  ",
         [theme.breakpoints.up("md")]: {
           height: "60px",
         },

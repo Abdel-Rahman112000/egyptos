@@ -13,7 +13,6 @@ import { ContactType } from "types/Contact";
 import Spinner from "pages/SpinnerPage/Spinner";
 import { homeContext } from "pages/HomeContext";
 import { imgPath } from "methods/img";
-import Helmet from "react-helmet";
 
 function ContactUsPage() {
   const [t] = useTranslation();
@@ -42,17 +41,6 @@ function ContactUsPage() {
     <>
       {status === "done" ? (
         <Stack>
-          <Helmet>
-            <title>{homeData?.siteInformation?.contact_us}</title>
-            <meta
-              name="description"
-              content={homeData?.siteInformation?.contactMetaDescription}
-            />
-            <meta
-              name="keywords"
-              content={homeData?.siteInformation?.contactMetaTags}
-            />
-          </Helmet>
           <FixedSection title={homeData?.siteInformation?.contact_title} />
           <Box
             sx={{

@@ -22,7 +22,6 @@ import { imgPath } from "methods/img";
 import "./main.css";
 import { homeContext } from "pages/HomeContext";
 import { LocalNavLink } from "hooks/useLocalNavigate";
-import Helmet from "react-helmet";
 function HurghadaCard() {
   const [t, i18n] = useTranslation();
   const { language } = i18n;
@@ -57,8 +56,13 @@ function HurghadaCard() {
           <FixedSection title={homeData?.siteInformation?.service_title} />
           <Stack sx={{ padding: "80px 30px" }}>
             <Typography
-              variant="h3"
-              sx={{ textAlign: "center", fontWeight: 600, mb: 10 }}
+              variant="h1"
+              sx={{
+                textAlign: "center",
+                fontWeight: 600,
+                mb: 10,
+                fontSize: "45px",
+              }}
             >
               {products?.category}
             </Typography>
@@ -66,14 +70,6 @@ function HurghadaCard() {
               <Grid container spacing={2}>
                 {products?.products.map((card, index) => (
                   <Grid item md={4} key={index}>
-                    <Helmet>
-                      <title>{products?.category}</title>
-                      <meta
-                        name="description"
-                        content={card?.metaDescription}
-                      />
-                      <meta name="keywords" content={card?.metaTags} />
-                    </Helmet>
                     <Card
                       sx={{
                         display: "flex",
@@ -91,7 +87,7 @@ function HurghadaCard() {
                       <Stack sx={{ position: "relative" }}>
                         <Box
                           component={LocalNavLink}
-                          to={`/product/${card.title}`}
+                          to={`/excursionsfroomhurghada/${card.title}`}
                           sx={{
                             overflow: "hidden",
                             "&:hover img": {
@@ -133,7 +129,7 @@ function HurghadaCard() {
                         <Typography
                           variant="h6"
                           component={LocalNavLink}
-                          to={`/product/${card.title}`}
+                          to={`/excursionsfroomhurghada/${card.title}`}
                           sx={{
                             fontWeight: 700,
                             marginTop: 4,
@@ -190,7 +186,7 @@ function HurghadaCard() {
                               padding: "9px",
                               marginBottom: "15px",
                             }}
-                            to={`/product/${card.title}`}
+                            to={`/excursionsfroomhurghada/${card.title}`}
                           >
                             {t("main.ReadMore")}
                           </Typography>

@@ -13,7 +13,6 @@ import SliderLogo from "./components/SliderLogo";
 import { useTranslation } from "react-i18next";
 import SliderHomeShopping from "./components/SliderHomeShopping";
 import { Stack } from "@mui/material";
-import { Helmet } from "react-helmet";
 
 function MainPages() {
   const [t, i18n] = useTranslation();
@@ -22,11 +21,6 @@ function MainPages() {
 
   return (
     <Stack sx={{ overflow: "hidden" }}>
-      <Helmet>
-        <title>{homeData?.metaTitle}</title>
-        <meta name="description" content={homeData?.metaDescription} />
-        <meta name="keywords" content={homeData?.metaTags} />
-      </Helmet>
       <Slider />
       {language !== "ar" && (
         <>

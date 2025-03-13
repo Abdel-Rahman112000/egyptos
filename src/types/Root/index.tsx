@@ -97,6 +97,8 @@ export interface SiteInformation {
   you_will_be: string;
   contactMetaDescription: string;
   contactMetaTags: string;
+  book_now: string;
+  vedio: string;
 }
 export interface HotelCat {
   id: string;

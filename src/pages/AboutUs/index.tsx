@@ -1,16 +1,13 @@
 import { Box, Container, Grid, Stack, Typography } from "@mui/material";
-import AboutUsImg from "../../assets/aboutUs.png";
 import "./About.css";
 import { useTranslation } from "react-i18next";
 import FixedSection from "../../Components/FixedSection";
-import RenderRtchText from "../../Components/RenderRte";
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { api } from "methods/api";
 import { AboutType } from "types/About";
 import { homeContext } from "pages/HomeContext";
 import RenderRte from "../../Components/RenderRte";
-import Helmet from "react-helmet";
 function AboutUs() {
   const [status, setStatus] = useState<"none" | "loading" | "done">("none");
   const [aboutData, setAboutData] = useState<AboutType | undefined>(undefined);
@@ -35,17 +32,7 @@ function AboutUs() {
   return (
     <Stack>
       <FixedSection title={homeData?.siteInformation?.about_title} />
-      <Helmet>
-        <title>{homeData?.siteInformation.about_us}</title>
-        <meta
-          name="description"
-          content={homeData?.siteInformation?.about_description}
-        />
-        <meta
-          name="keywords"
-          content={homeData?.siteInformation?.aboutMetaTags}
-        />
-      </Helmet>
+
       <Container maxWidth={"lg"} sx={{ py: "80px" }}>
         <Grid container>
           <Grid item md={6}>

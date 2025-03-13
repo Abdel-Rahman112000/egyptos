@@ -41,8 +41,8 @@ function SliderAndTableHotel({ cardHotelInfo }: PropsType) {
   return (
     <>
       <Typography
-        variant="h4"
-        sx={{ textAlign: "center", py: 2, fontWeight: "600" }}
+        variant="h1"
+        sx={{ textAlign: "center", py: 2, fontSize: "45px", fontWeight: "600" }}
       >
         {cardHotelInfo?.hotel?.title}
       </Typography>

@@ -20,7 +20,6 @@ import { imgPath } from "methods/img";
 import { HotelCardType } from "types/Hotel";
 import { homeContext } from "pages/HomeContext";
 import { LocalNavLink } from "hooks/useLocalNavigate";
-import Helmet from "react-helmet";
 import RenderRte from "Components/RenderRte";
 function HotelCard() {
   const [t, i18n] = useTranslation();
@@ -53,16 +52,16 @@ function HotelCard() {
     <>
       {status == "done" ? (
         <>
-          <Helmet>
-            <title>{products?.department}</title>
-            <meta name="description" content={products?.metaDescription} />
-            <meta name="keywords" content={products?.metaTags} />
-          </Helmet>
           <FixedSection title={homeData?.siteInformation?.hotel_title} />
           <Stack sx={{ padding: "80px 30px" }}>
             <Typography
-              variant="h3"
-              sx={{ textAlign: "center", fontWeight: 600, mb: 10 }}
+              variant="h1"
+              sx={{
+                textAlign: "center",
+                fontWeight: 600,
+                fontSize: "45px",
+                mb: 10,
+              }}
             >
               {products?.department}
             </Typography>

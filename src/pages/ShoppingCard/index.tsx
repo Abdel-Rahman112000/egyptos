@@ -19,7 +19,6 @@ import Spinner from "pages/SpinnerPage/Spinner";
 import { imgPath } from "methods/img";
 import { ShoppingCardType } from "types/Shopping";
 import { homeContext } from "pages/HomeContext";
-import Helmet from "react-helmet";
 function ShopCard() {
   const [t, i18n] = useTranslation();
   const { name } = useParams();
@@ -53,8 +52,13 @@ function ShopCard() {
           <FixedSection title={homeData?.siteInformation?.explorer_title} />
           <Stack sx={{ padding: "80px 30px" }}>
             <Typography
-              variant="h3"
-              sx={{ textAlign: "center", fontWeight: 600, mb: 10 }}
+              variant="h1"
+              sx={{
+                textAlign: "center",
+                fontWeight: 600,
+                mb: 10,
+                fontSize: "45px",
+              }}
             >
               {products?.category_name}
             </Typography>
@@ -62,14 +66,6 @@ function ShopCard() {
               <Grid container spacing={2}>
                 {products?.shops?.map((card, index) => (
                   <Grid item md={4} key={index}>
-                    <Helmet>
-                      <title>{products?.category_name}</title>
-                      <meta
-                        name="description"
-                        content={products?.metaDescription}
-                      />
-                      <meta name="keywords" content={products?.metaTags} />
-                    </Helmet>
                     <Card
                       sx={{
                         backgroundColor: "#fff",

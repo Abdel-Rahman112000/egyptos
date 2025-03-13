@@ -66,7 +66,7 @@ function SecondNavbar() {
 
   useEffect(() => {
     if (scrollPosition > 0) {
-      setNavBackground("0");
+      setNavBackground(isMediumScreen ? "60px" : "120px");
     } else {
       setNavBackground(isMediumScreen ? "60px" : "120px");
     }
@@ -107,7 +107,7 @@ function SecondNavbar() {
       position="fixed"
       sx={{
         top: navBackground,
-        transition: ".2s all ease",
+        // transition: ".2s all ease",
         background: "background",
         color: "primary.main",
       }}

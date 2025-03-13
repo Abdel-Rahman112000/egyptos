@@ -10,7 +10,6 @@ import Spinner from "pages/SpinnerPage/Spinner";
 import SliderAndTableHotel from "./SliderAndTable";
 import { HotelSliderType } from "types/Hotel";
 import { homeContext } from "pages/HomeContext";
-import Helmet from "react-helmet";
 
 function SliderHotel() {
   const [t, i18n] = useTranslation();
@@ -40,18 +39,7 @@ function SliderHotel() {
     <>
       {status == "done" ? (
         <>
-          <Helmet>
-            <title>{cardHotelInfo?.hotel.title}</title>
-            <meta
-              name="description"
-              content={cardHotelInfo?.hotel.metaDescription}
-            />
-            <meta
-              name="keywords"
-              content={cardHotelInfo?.hotel.metaDescription}
-            />
-          </Helmet>
-          <FixedSection title="Excursions From Hurghada" />
+          <FixedSection title="Hotel" />
           <Stack
             sx={{
               py: 8,
@@ -72,7 +60,7 @@ function SliderHotel() {
                   transition: "all .3s",
                 }}
               >
-                {t("Hotel.ViewVideo")}
+                {homeData?.siteInformation.vedio}
               </Button>
             </Box>
           </Stack>

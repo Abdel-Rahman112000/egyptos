@@ -8,7 +8,7 @@ import {
   Typography,
 } from "@mui/material";
 import { DatePicker } from "@mui/x-date-pickers";
-import { Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction, useContext, useState } from "react";
 import { Controller, useForm, SubmitHandler } from "react-hook-form";
 import { ProductSliderType } from "types/HardProducts";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
@@ -21,8 +21,11 @@ import axios from "axios";
 import { api } from "methods/api";
 import { useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { homeContext } from "pages/HomeContext";
 
 function DialogForm({ open, setOpen }: PropsType) {
+  const { homeData } = useContext(homeContext);
+
   const { id } = useParams();
   const [t] = useTranslation();
   const {
@@ -179,7 +182,7 @@ function DialogForm({ open, setOpen }: PropsType) {
               variant="contained"
               sx={{ borderRadius: "10px", padding: "10px 20px" }}
             >
-              {t("Hurghada.BookNow")}
+              {homeData?.siteInformation.book_now}
             </Button>
           </Grid>
         </Grid>

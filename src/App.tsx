@@ -12,7 +12,7 @@ import axios from "axios";
 import isRtl from "methods/isRtl";
 import { useContext, useEffect } from "react";
 import { homeContext } from "pages/HomeContext";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 axios.defaults.headers.common["Access-Control-Allow-Origin"] = "*";
 
@@ -21,6 +21,7 @@ function App() {
   const { language, changeLanguage } = i18n;
   const { homeData } = useContext(homeContext);
   const { local } = useParams();
+  const navigate = useNavigate();
   axios.defaults.headers.common["lang"] = language;
   useEffect(() => {
     if (!local) {

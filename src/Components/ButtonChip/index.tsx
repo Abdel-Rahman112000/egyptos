@@ -9,7 +9,7 @@ function ButtonChip({ id, name, link }: PropsType) {
     <Grid sx={{ p: 1 }} item md={3} xs={12}>
       <Stack
         component={LocalNavLink}
-        to={`${link + "/" + id}`}
+        to={`${link + "/" + name}`}
         sx={{
           backgroundColor: "primary.main",
           py: 2,

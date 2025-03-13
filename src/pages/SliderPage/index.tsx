@@ -14,7 +14,6 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import SettingsPhoneIcon from "@mui/icons-material/SettingsPhone";
 import CallIcon from "@mui/icons-material/Call";
-import Helmet from "react-helmet";
 
 function SliderHurhada() {
   const [t, i18n] = useTranslation();
@@ -87,15 +86,7 @@ function SliderHurhada() {
     <>
       {status == "done" ? (
         <>
-          <Helmet>
-            <title>{productInfo?.product.title}</title>
-            <meta
-              name="description"
-              content={productInfo?.product.metaDescription}
-            />
-            <meta name="keywords" content={productInfo?.product.metaTags} />
-          </Helmet>
-          <FixedSection title="Excursions From Hurghada" />
+          <FixedSection title="" />
           <Stack
             sx={{
               py: 8,
@@ -148,7 +139,7 @@ function SliderHurhada() {
                     }, 100); // 1000ms delay (1 second)
                   }}
                 >
-                  {t("Hurghada.BookNow")}
+                  {homeData?.siteInformation.book_now}
                 </Button>
               </Box>
             )}
