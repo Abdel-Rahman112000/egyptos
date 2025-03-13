@@ -21,6 +21,7 @@ import { HotelCardType } from "types/Hotel";
 import { homeContext } from "pages/HomeContext";
 import { LocalNavLink } from "hooks/useLocalNavigate";
 import RenderRte from "Components/RenderRte";
+import Helmet from "react-helmet";
 function HotelCard() {
   const [t, i18n] = useTranslation();
   const navigate = useNavigate();
@@ -40,7 +41,6 @@ function HotelCard() {
         setProducts(data.data);
       })
       .catch((error) => {
-        console.log("error", error);
         setStatus("none");
       });
   }
@@ -52,6 +52,11 @@ function HotelCard() {
     <>
       {status == "done" ? (
         <>
+          <Helmet>
+            <title> {products?.department}</title>
+            <meta name="description" content={products?.metaDescription} />
+            <meta name="keywords" content={products?.metaTags} />
+          </Helmet>
           <FixedSection title={homeData?.siteInformation?.hotel_title} />
           <Stack sx={{ padding: "80px 30px" }}>
             <Typography

@@ -13,6 +13,7 @@ import isRtl from "methods/isRtl";
 import { useContext, useEffect } from "react";
 import { homeContext } from "pages/HomeContext";
 import { useNavigate, useParams } from "react-router-dom";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 axios.defaults.headers.common["Access-Control-Allow-Origin"] = "*";
 
@@ -39,13 +40,15 @@ function App() {
         language
       )}
     >
-      <Stack
-        sx={{ direction: isRtl(language) ? "rtl" : "ltr" }}
-        component={"main"}
-        className="App"
-      >
-        <Layout key={language} />
-      </Stack>
+      <HelmetProvider>
+        <Stack
+          sx={{ direction: isRtl(language) ? "rtl" : "ltr" }}
+          component={"main"}
+          className="App"
+        >
+          <Layout key={language} />
+        </Stack>
+      </HelmetProvider>
     </ThemeProvider>
   );
 }

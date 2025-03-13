@@ -22,6 +22,7 @@ import { imgPath } from "methods/img";
 import "./main.css";
 import { homeContext } from "pages/HomeContext";
 import { LocalNavLink } from "hooks/useLocalNavigate";
+import Helmet from "react-helmet";
 function HurghadaCard() {
   const [t, i18n] = useTranslation();
   const { language } = i18n;
@@ -66,6 +67,11 @@ function HurghadaCard() {
             >
               {products?.category}
             </Typography>
+            <Helmet>
+              <title> {products?.category}</title>
+              <meta name="description" content={products?.metaDescription} />
+              <meta name="keywords" content={products?.metaTags} />
+            </Helmet>
             <Container>
               <Grid container spacing={2}>
                 {products?.products.map((card, index) => (

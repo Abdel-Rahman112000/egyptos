@@ -1,6 +1,10 @@
 export interface HardProductsType {
   products: Products[];
   category: string;
+  metaDescription: string;
+  metaImage: string;
+  metaTags: string;
+  metaTitle: string;
 }
 export interface ProductSliderType {
   product: Products;

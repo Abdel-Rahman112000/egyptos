@@ -11,6 +11,7 @@ import { BlogType } from "types/Blog";
 import { imgPath } from "methods/img";
 import RenderRte from "Components/RenderRte";
 import { homeContext } from "pages/HomeContext";
+import Helmet from "react-helmet";
 function Blog() {
   const { name } = useParams();
   const { homeData } = useContext(homeContext);
@@ -36,6 +37,11 @@ function Blog() {
   }, [name]);
   return (
     <Stack>
+      <Helmet>
+        <title> {blogData?.blog.title}</title>
+        <meta name="description" content={blogData?.blog.metaDescription} />
+        <meta name="keywords" content={blogData?.blog.metaTags} />
+      </Helmet>
       <FixedSection title={homeData?.siteInformation?.blog_title} />
       <Container maxWidth={"lg"} sx={{ py: "100px" }}>
         <Grid container spacing={4}>

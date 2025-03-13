@@ -8,6 +8,7 @@ import { api } from "methods/api";
 import { AboutType } from "types/About";
 import { homeContext } from "pages/HomeContext";
 import RenderRte from "../../Components/RenderRte";
+import Helmet from "react-helmet";
 function AboutUs() {
   const [status, setStatus] = useState<"none" | "loading" | "done">("none");
   const [aboutData, setAboutData] = useState<AboutType | undefined>(undefined);
@@ -31,6 +32,12 @@ function AboutUs() {
   }, []);
   return (
     <Stack>
+      <Helmet>
+        <title> {aboutData?.metaTitle}</title>
+        <meta name="description" content={aboutData?.metaDescription} />
+        <meta name="og:image" content={aboutData?.metaImage} />
+        <meta name="keywords" content={aboutData?.metaTags} />
+      </Helmet>
       <FixedSection title={homeData?.siteInformation?.about_title} />
 
       <Container maxWidth={"lg"} sx={{ py: "80px" }}>

@@ -19,6 +19,7 @@ import Spinner from "pages/SpinnerPage/Spinner";
 import { imgPath } from "methods/img";
 import { ShoppingCardType } from "types/Shopping";
 import { homeContext } from "pages/HomeContext";
+import Helmet from "react-helmet";
 function ShopCard() {
   const [t, i18n] = useTranslation();
   const { name } = useParams();
@@ -37,7 +38,6 @@ function ShopCard() {
         setProducts(data.data);
       })
       .catch((error) => {
-        console.log("error", error);
         setStatus("none");
       });
   }
@@ -49,6 +49,11 @@ function ShopCard() {
     <>
       {status == "done" ? (
         <>
+          <Helmet>
+            <title> {products?.category_name}</title>
+            <meta name="description" content={products?.metaDescription} />
+            <meta name="keywords" content={products?.metaTags} />
+          </Helmet>
           <FixedSection title={homeData?.siteInformation?.explorer_title} />
           <Stack sx={{ padding: "80px 30px" }}>
             <Typography
